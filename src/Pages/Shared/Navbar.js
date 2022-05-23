@@ -21,7 +21,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar bg-accent sticky top-0 z-50">
+    <div class="navbar bg-accent sticky top-0 z-50 text-white">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -69,7 +69,7 @@ const Navbar = () => {
               <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
             </svg>
           </Link>
-          <ul class="p-2">
+          <ul class="p-2 bg-accent ">
             <li>
               <Link to="">Submenu 1</Link>
             </li>
