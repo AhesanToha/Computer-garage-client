@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import swal from "sweetalert";
+import auth from "../../firebase.init";
 import UserInfo from "./UserInfo";
 
 const Purchase = () => {
+  const [user] = useAuthState(auth);
   const { toolId } = useParams();
-  const [orderQuantity, setOrderQuantity] = useState(15);
   const [isDisabled, setIsDisable] = useState(false);
   const [tool, setTool] = useState([]);
   const { name, img, description, price, quantity, _id } = tool;
@@ -51,9 +53,33 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => {
         swal("Order has been successfully received!", "", "success");
+
         setTool(newTool);
       });
+
+    const order = {
+      userName: user?.displayName,
+      email: user?.email,
+      name,
+      img,
+      description,
+      price,
+      quantity,
+    };
+
+    fetch(`http://localhost:5000/orders`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
+
   return (
     <>
       <div class="hero min-h-screen shadow-2xl">

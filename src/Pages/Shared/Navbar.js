@@ -7,7 +7,6 @@ import profile from "../../images/profile.png";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const menuItem = (
     <>
       <li>
@@ -21,7 +20,9 @@ const Navbar = () => {
         <Link to="">Blogs</Link>
       </li>
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <label htmlFor="dashboard-sidebar">
+          <Link to="/dashboard">Dashboard</Link>
+        </label>
       </li>
     </>
   );
