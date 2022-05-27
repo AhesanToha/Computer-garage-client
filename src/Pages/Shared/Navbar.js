@@ -10,14 +10,14 @@ const Navbar = () => {
   const menuItem = (
     <>
       <li>
-        <Link to="">Home</Link>
+        <Link to="/">Home</Link>
       </li>
 
       <li>
-        <Link to="">Products</Link>
+        <Link to="/products">Products</Link>
       </li>
       <li>
-        <Link to="">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
       <li>
         <label htmlFor="dashboard-sidebar">

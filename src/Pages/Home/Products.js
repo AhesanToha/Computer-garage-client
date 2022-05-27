@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Loading from "../Shared/Loading";
-import Tool from "./Tool";
+import Product from "./product";
 
-const Tools = () => {
+const Products = () => {
   const [tools, setTools] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -23,15 +23,12 @@ const Tools = () => {
         All kinds of tools are available here: {tools.length}
       </h1>
       <div className="grid lg:grid-cols-2 gap-5">
-        {tools
-          .reverse()
-          .slice(0, 6)
-          .map((tool) => (
-            <Tool key={tool._id} tool={tool}></Tool>
-          ))}
+        {tools.map((tool) => (
+          <Product key={tool._id} tool={tool}></Product>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Tools;
+export default Products;
