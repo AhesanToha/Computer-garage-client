@@ -8,7 +8,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/orders?email=${user.email}`)
+      fetch(`https://computer-garage.herokuapp.com/orders?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }
@@ -37,7 +37,9 @@ const MyOrders = () => {
                 <td>{order.name}</td>
                 <td>{order.userName}</td>
                 <td>{order.email}</td>
-                <td><button className="btn btn-sm btn-primary">Cancel</button></td>
+                <td>
+                  <button className="btn btn-sm btn-primary">Cancel</button>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -13,7 +13,7 @@ const Purchase = () => {
   const { name, img, description, price, quantity, _id } = tool;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tools/${toolId}`)
+    fetch(`https://computer-garage.herokuapp.com/tools/${toolId}`)
       .then((res) => res.json())
       .then((data) => setTool(data));
   }, [quantity, toolId]);
@@ -43,7 +43,7 @@ const Purchase = () => {
       quantity: quantity - inputQuantity,
     };
 
-    fetch(`http://localhost:5000/tools/${toolId}`, {
+    fetch(`https://computer-garage.herokuapp.com/tools/${toolId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const Purchase = () => {
       quantity,
     };
 
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://computer-garage.herokuapp.com/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

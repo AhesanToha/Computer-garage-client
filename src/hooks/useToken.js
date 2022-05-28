@@ -5,17 +5,18 @@ const useToken = (user) => {
   useEffect(() => {
     const email = user?.user?.email;
     const currentUser = { email: email };
-    if(email){
-        fetch(`http://localhost:5000/user/${email}`, {
-            method:"PUT",
-            headers:{
-                "content-type":"application/json"
-            },
-            body: JSON.stringify(currentUser)
-        }).then(res => res.json())
-        .then(data => {
-            setToken(data)
-        })
+    if (email) {
+      fetch(`https://computer-garage.herokuapp.com/user/${email}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setToken(data);
+        });
     }
   }, [user]);
   return [token];

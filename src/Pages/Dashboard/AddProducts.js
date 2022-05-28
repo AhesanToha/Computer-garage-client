@@ -16,7 +16,7 @@ const AddProducts = () => {
       quantity: e.target.quantity.value,
       img: e.target.img.value,
     };
-    fetch(`http://localhost:5000/tools`, {
+    fetch(`https://computer-garage.herokuapp.com/tools`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
