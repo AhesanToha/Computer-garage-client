@@ -24,6 +24,9 @@ const Navbar = () => {
         <Link to="/blogs">Blogs</Link>
       </li>
       <li>
+        <Link to="/Portfolio">Portfolio</Link>
+      </li>
+      <li>
         <label htmlFor="dashboard-sidebar">
           <Link to="/dashboard">Dashboard</Link>
         </label>

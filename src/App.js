@@ -18,6 +18,7 @@ import RequireAdmin from "./Pages/Login/RequireAdmin";
 import Products from "./Pages/Home/Products";
 import NotFound from "./Pages/Shared/NotFound";
 import Blogs from "./Pages/Home/Blogs";
+import Portfolio from "./Pages/Home/Portfolio";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
           <Route path="/products" element={<Products></Products>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+          <Route path="/Portfolio" element={<Portfolio></Portfolio>}></Route>
           <Route
             path="/dashboard"
             element={
