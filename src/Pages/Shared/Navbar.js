@@ -4,9 +4,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import profile from "../../images/profile.png";
+import Loading from "./Loading";
 
 const Navbar = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+  if (loading) {
+    return <Loading></Loading>;
+  }
   const menuItem = (
     <>
       <li>
@@ -26,6 +30,7 @@ const Navbar = () => {
       </li>
     </>
   );
+
   return (
     <div className="navbar bg-accent sticky top-0 z-50 text-white">
       <div className="navbar-start">
